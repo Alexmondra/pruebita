@@ -1,0 +1,336 @@
+:root {
+    --primary-color: #3b82f6;
+    --sidebar-background: #1e3a8a;
+    --border: 1px solid #e2e8f0;
+    --border-color: #e2e8f0;
+    --border-radius: 0.625rem;
+    --border-radius-full: 9999px;
+}
+
+body {
+    font-family: "Inter var", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+}
+
+.btn {
+    height: 40px;
+    padding: 0.275rem 1rem;
+    font-size: 0.875rem;
+    border-radius: var(--border-radius);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-sm {
+    padding: 0 14px;
+    height: 36px;
+    border-radius: 8px;
+}
+
+.btn-sm i {
+    margin-right: 8px;
+}
+
+.btn-icon {
+    padding: 0px;
+}
+
+.btn-icon i {
+    margin-right: 0px;
+}
+
+.btn.btn-icon {
+    width: 40px;
+}
+
+.btn-sm.btn-icon {
+    width: 36px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-secondary {
+    border: none;
+    color: #0f172a;
+    background-color: #e2e8f0;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:not(:disabled):not(.disabled):active {
+    color: #0f172a;
+    background-color: #cbd5e1;
+}
+
+div.dt-button-collection {
+    padding: 0.5rem 0;
+    border-radius: var(--border-radius);
+    border: var(--border);
+}
+
+div.dt-button-collection div.dropdown-menu {
+    padding: 0 0.5rem;
+}
+
+div.dt-button-collection .dt-button {
+    min-width: 100%;
+}
+
+div.dt-button-collection .dt-button:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+div.dt-button-collection .dt-button:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.dropdown-item {
+    height: 40px;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item.active {
+    color: #2563eb;
+    background-color: #bfdbfe;
+}
+
+.page-item .page-link {
+    height: 36px;
+    padding: 0px 14px;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+}
+
+.page-item:first-child .page-link {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.form-control {
+    height: 2.5rem;
+    font-size: 0.875rem;
+    padding: 0.275rem 1rem;
+    border-radius: var(--border-radius);
+    border: var(--border);
+    transition: none;
+    display: flex;
+    align-items: center;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0px 0px 0 1px var(--primary-color);
+}
+
+.form-control-sm {
+    height: 34px;
+    padding: 0px 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.form-control.disabled {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+
+.input-group-text {
+    height: 36px;
+    border-color: var(--border-color);
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+.card {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: none;
+}
+
+.card-title,
+.modal-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.modal-open .modal {
+    padding: 1rem;
+}
+
+.modal-dialog {
+    margin: 0px auto;
+}
+
+.modal-content {
+    max-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    box-shadow: none;
+    border: none;
+}
+
+.modal-header {
+    flex-shrink: 0;
+    height: 56px;
+    padding: 0px 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.modal-body {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    flex-shrink: 0;
+    height: 56px;
+    padding: 0px 1rem;
+    justify-content: flex-start;
+}
+
+.accordion > .card {
+    margin-bottom: 0px;
+}
+
+.accordion > .card > .card-header {
+    padding: 0px;
+    border-bottom: none;
+}
+
+.accordion > .card > .card-header > .btn-accordion {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+/* adminlte */
+.main-header {
+    border-bottom: var(--border);
+}
+
+.nav-sidebar .nav-item .nav-link {
+    font-size: 0.875rem;
+    border-radius: var(--border-radius);
+}
+
+.main-sidebar {
+    border-right: var(--border);
+}
+
+.main-sidebar .brand-link {
+    border-bottom: none;
+    color: #25388a;
+    font-weight: 700;
+}
+
+.sidebar-dark {
+    background-color: var(--sidebar-background);
+}
+
+.sidebar-dark .nav-sidebar .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-light {
+    background-color: #fff;
+}
+
+.sidebar-light .nav-sidebar .nav-item .nav-link {
+    color: #64748b;
+}
+
+.sidebar-light .nav-sidebar .nav-item .nav-link:hover,
+.sidebar-light .nav-sidebar .nav-item .nav-link:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-light .nav-sidebar .nav-item .nav-link.active,
+.sidebar-light .nav-sidebar .nav-item .nav-link.active:hover,
+.sidebar-light .nav-sidebar .nav-item .nav-link.active:focus {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.sidebar-light .nav-treeview .nav-item .nav-link.active,
+.sidebar-light .nav-treeview .nav-item .nav-link.active:hover,
+.sidebar-light .nav-treeview .nav-item .nav-link.active:focus {
+    color: var(--primary-color);
+    background-color: #dbeafe;
+}
+
+.content-wrapper {
+    background-color: #f1f5f9;
+}
+
+.table th {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.table td {
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+
+table.dataTable > thead .sorting:before,
+table.dataTable > thead .sorting:after {
+    bottom: 0.4rem;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8fafc;
+}
+
+.link {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.table {
+    width: 100% !important;
+}
