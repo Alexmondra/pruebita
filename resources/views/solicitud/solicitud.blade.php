@@ -51,8 +51,8 @@
                 let op = data.action;
                 if (op == 'activar') {
                     Swal.fire({
-                        title: 'Activar Registro',
-                        text: "¿Esta seguro de querer activar el registro",
+                        title: 'Eliminar Registro',
+                        text: "¿Esta seguro de querer eliminar el registro",
                         icon: 'success',
                         showCancelButton: true,
                         confirmButtonColor: '#3085d6',
@@ -67,8 +67,8 @@
                 }
                 if (op == 'desactivar') {
                     Swal.fire({
-                        title: 'Desactivar Registro',
-                        text: "¿Esta seguro de querer desactivar el registro?",
+                        title: 'Eliminar Registro',
+                        text: "¿Esta seguro de querer eliminar el registro?",
                         icon: 'warning',
                         showCancelButton: true,
                         confirmButtonColor: '#3085d6',

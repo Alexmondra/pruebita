@@ -78,9 +78,8 @@ class SolicitudController extends Controller
         $solicitud->user_id_rpta = auth()->id();
         $solicitud->observaciones = $request->observaciones;
         $solicitud->estado = $request->estado;
- 
         $solicitud->save();
-        
+
         return response()->json([
             'status'=> 'success',
             'message'=> 'Actualización de la solicitud satisfactoria'
@@ -91,15 +90,23 @@ class SolicitudController extends Controller
     public function destroy($id)
     {
         $this->authorize('solicitud-activar');
-        $registro = Solicitud::findOrFail($id);
-        $mensaje = "";
-        $registro->estado = $registro->estado === 'Aprobado' ? 'Rechazado' : 'Aprobado';
-        $registro->estado === 'Aprobado' ? $mensaje = "Activación" : $mensaje = "Desactivación";
-        $registro->save();
-
-        return response()->json([
-            'status' => 'success',
-            'message' => $mensaje . ' de registro satisfactoria'
-        ]);
+    
+        try {
+            $registro = Solicitud::findOrFail($id);
+    
+            $registro->delete();
+    
+            return response()->json([
+                'status' => 'success',
+                'message' => $registro->nombre . ' eliminada satisfactoriamente'
+            ]);
+    
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Error al eliminar la solicitud'
+            ], 500);
+        }
     }
+    
 }

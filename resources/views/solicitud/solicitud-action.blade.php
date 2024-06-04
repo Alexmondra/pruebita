@@ -26,13 +26,8 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="tipo">Tipos (*)</label>
-                            <select name="tipo" class="form-control form-control-sm" disabled>
-                                @foreach($categorias as $categoria)
-                                    <option value="{{ $categoria->nombre }}" {{ $solicitud->tipo === $categoria->nombre ? 'selected' : '' }}>
-                                        {{ $categoria->nombre }}
-                                    </option>
-                                @endforeach
-                            </select>
+                            <input type="text" name="tipo" class="form-control form-control-sm"
+                                value="{{ $solicitud->tipo }}" readonly>
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -50,10 +45,13 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="estado">Estado (*)</label>
-                            <input type="text" name="estado" class="form-control form-control-sm"
-                                value="{{ $solicitud->estado }}">
+                            <select name="estado" class="form-control form-control-sm">
+                                <option value="aprobado" {{ $solicitud->estado == 'aprobado' ? 'selected' : '' }}>Aprobado</option>
+                                <option value="rechazado" {{ $solicitud->estado == 'rechazado' ? 'selected' : '' }}>Rechazado</option>
+                            </select>
                         </div>
                     </div>
+                    
                 @else
                     <div class="col-lg-12">
                         <div class="form-group">
