@@ -37,6 +37,10 @@ class UserRolePermissionSeeder extends Seeder
         Permission::create(['name' => 'pedido-crear']);
         Permission::create(['name' => 'pedido-editar']);
         Permission::create(['name' => 'pedido-activar']);
+        Permission::create(['name' => 'solicitud-listar']);
+        Permission::create(['name' => 'solicitud-crear']);
+        Permission::create(['name' => 'solicitud-editar']);
+        Permission::create(['name' => 'solicitud-activar']);
         //Roles
         $adminRole = Role::create(['name'  =>  'Administrador']);
         $adminRole->givePermissionTo(Permission::all());

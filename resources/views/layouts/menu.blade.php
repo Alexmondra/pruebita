@@ -19,9 +19,9 @@
             </p>
           </a>
         </li>
-        @can('categoria-listar')
+        @can('solicitud-listar')
         <li id="liVisita" class="nav-item">
-          <a id="aVisita" href="{{route('categoria.index')}}" class="nav-link">
+          <a id="aVisita" href="{{route('solicitud.index')}}" class="nav-link">
             <i class="nav-icon fas fa-file"></i>
             <p>
               solicitudes

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\solicitudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::resource('usuario', UserController::class);
     Route::resource('rol', RoleController::class);
     Route::resource('categoria', CategoriaController::class);
+    Route::resource('solicitud', solicitudController::class);
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
