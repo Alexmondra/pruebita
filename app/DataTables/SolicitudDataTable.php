@@ -77,9 +77,7 @@ class SolicitudDataTable extends DataTable
             Column::computed('opciones')
                   ->exportable(false)
                   ->printable(false),
-            Column::make('id'),
             Column::make('user_name')->title('Usuario'),
-            Column::make('user_id_rpta')->title('Usuario rpta'),
             Column::make('tipo'),
             Column::make('comentario'),
             Column::make('observaciones'),

@@ -5,6 +5,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\solicitudController;
+use App\Http\Controllers\tipoSolicitudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,9 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
     Route::resource('rol', RoleController::class);
     Route::resource('categoria', CategoriaController::class);
     Route::resource('solicitud', solicitudController::class);
+    Route::resource('tipoSolicitud', tipoSolicitudController::class);
 });
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

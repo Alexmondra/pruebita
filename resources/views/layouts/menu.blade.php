@@ -38,9 +38,9 @@
             </p>
           </a>
           <ul class="nav nav-treeview">
-            @can('categoria-listar')
+            @can('tiposolicitud-listar')
             <li class="nav-item">
-              <a id="liCategoria" href="{{route('categoria.index')}}" class="nav-link">
+              <a id="liCategoria" href="{{route('tipoSolicitud.index')}}" class="nav-link">
                 <i class="far nav-icon"></i>
                 <p>Solicitud</p>
               </a>
@@ -77,7 +77,5 @@
         </li>
       </ul>
     </nav>
-    <!-- /.sidebar-menu -->
   </div>
-  <!-- /.sidebar -->
 </aside>
