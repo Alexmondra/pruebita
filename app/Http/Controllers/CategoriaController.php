@@ -35,22 +35,26 @@ class CategoriaController extends Controller
      */
     public function store(CategoriaRequest $request)
     {
-        //dd($request);
         $this->authorize('categoria-crear');
-        $registro= new Categoria();
-        $registro->nombre=$request->nombre;
-        //Imagen
-        $sufijo=Str::random(2);
+        $registro = new Categoria();
+        $registro->nombre = $request->nombre;
+
+        // Imagen
+        $sufijo = Str::random(2);
         $image = $request->file('imagen');
-        if (!is_null($image)){            
-            $nombreImagen=$sufijo.'-'.$image->getClientOriginalName();
+        
+        if (!is_null($image)) {
+            $nombreImagen = $sufijo . '-' . $image->getClientOriginalName();
             $image->move('uploads/categorias', $nombreImagen);
             $registro->imagen = $nombreImagen;
+        } else {
+            $registro->imagen = null;
         }
+
         $registro->save();
         return response()->json([
-            'status'=> 'success',
-            'message'=>'Registro creado satisfactoriamente'
+            'status' => 'success',
+            'message' => 'Registro creado satisfactoriamente'
         ]);
     }
 

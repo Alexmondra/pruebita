@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Solicitud;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use App\DataTables\SolicitudDataTable;
 use Illuminate\Support\Str;
@@ -23,10 +24,10 @@ class SolicitudController extends Controller
     public function create()
     {
         $this->authorize('solicitud-crear');
+        $categorias = Categoria::where('estado', 1)->get(); 
         $solicitud = new Solicitud();
-        return view('solicitud.solicitud-action', ['solicitud' => new Solicitud()]);
+        return view('solicitud.solicitud-action', ['solicitud' => $solicitud, 'categorias' => $categorias]);
     }
-
     public function store(Request $request)
     {
         $this->authorize('solicitud-crear');

@@ -25,28 +25,27 @@ class CategoriaDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->setRowId('id')
             ->escapeColumns('active')
-            ->addColumn('opciones',function($row){
-                $action='';
-                if(Gate::allows('categoria-editar')){
-                    $action= '<button data-action="edit" data-id="'.$row->id.'" class="btn btn-sm btn-icon btn-warning action"><i class="fas fa-edit"></i></button>';
+            ->addColumn('opciones', function($row) {
+                $action = '';
+                if (Gate::allows('categoria-editar')) {
+                    $action = '<button data-action="edit" data-id="' . $row->id . '" class="btn btn-sm btn-icon btn-warning action"><i class="fas fa-edit"></i></button>';
                 }
-                if(Gate::allows('categoria-activar')){
-                    if($row->activo){
-                        $action= $action.' <button data-action="desactivar" data-id="'.$row->id.'" class="btn btn-sm btn-icon btn-success action"><i class="fas fa-check"></i></button>';
-                    }else{
-                        $action= $action.' <button data-action="activar" data-id="'.$row->id.'" class="btn btn-sm btn-icon btn-danger action"><i class="fas fa-times"></i>&nbsp;</button>';
+                if (Gate::allows('categoria-activar')) {
+                    if ($row->activo) {
+                        $action = $action . ' <button data-action="desactivar" data-id="' . $row->id . '" class="btn btn-sm btn-icon btn-success action"><i class="fas fa-check"></i></button>';
+                    } else {
+                        $action = $action . ' <button data-action="activar" data-id="' . $row->id . '" class="btn btn-sm btn-icon btn-danger action"><i class="fas fa-times"></i>&nbsp;</button>';
                     }
                 }
                 return $action;
             })
             ->addColumn('vimagen', function ($row) {
-                if (empty($row->imagen)) {
-                    $url=asset("assets/noimage.png"); 
-                } else {
-                    $url=asset("uploads/categorias/$row->imagen"); 
-                }                
-                return '<img src='.$url.' border="0" width="40" class="img-rounded" align="center" />'; 
-         });
+                $url = empty($row->imagen) ? asset("assets/noimage.png") : asset("uploads/categorias/$row->imagen");
+                return '<img src="' . $url . '" border="0" width="40" class="img-rounded" align="center" />';
+            })
+            ->addColumn('activo', function ($row) {
+                return $row->activo ? 'Activo' : 'Desactivado';
+            });
     }
 
     /**
@@ -66,21 +65,10 @@ class CategoriaDataTable extends DataTable
                     ->setTableId('table-listado')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    //->dom('Bfrtip')
                     ->orderBy(1)
-                    /*
-                    ->buttons(
-                        Button::make('copy'),
-                        Button::make('csv'),
-                        Button::make('excel'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('colvis')
-                    )*/
-                    ->parameters(([
-                        //'language' => ['url' => '/public/assets/datatables/i18n/es-ES.json']
+                    ->parameters([
                         'language' => ['url' => '/assets/datatables/i18n/es-ES.json']
-                    ]));
+                    ]);
     }
 
     /**
@@ -94,7 +82,7 @@ class CategoriaDataTable extends DataTable
                   ->printable(false),
             Column::make('id'),
             Column::make('nombre'),
-            Column::make('vimagen'),
+            Column::make('activo')->title('estado') ,
         ];
     }
 

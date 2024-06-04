@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->string('nombre', 70)->required();
-            $table->string('imagen', 70);
+            $table->string('imagen', 70)->nullable();
             $table->boolean('activo')->default(1);
             $table->timestamps();
         });

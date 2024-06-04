@@ -27,12 +27,11 @@
                         <div class="form-group">
                             <label for="tipo">Tipo (*)</label>
                             <select name="tipo" class="form-control form-control-sm" disabled>
-                                <option value="Vacaciones" {{ $solicitud->tipo === 'Vacaciones' ? 'selected' : '' }}>
-                                    Vacaciones</option>
-                                <option value="Permiso" {{ $solicitud->tipo === 'Permiso' ? 'selected' : '' }}>Permiso
-                                </option>
-                                <option value="Aumento" {{ $solicitud->tipo === 'Aumento' ? 'selected' : '' }}>Aumento
-                                </option>
+                                @foreach($categorias as $categoria)
+                                    <option value="{{ $categoria->nombre }}" {{ $solicitud->tipo === $categoria->nombre ? 'selected' : '' }}>
+                                        {{ $categoria->nombre }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -74,9 +73,9 @@
                         <div class="form-group">
                             <label for="tipo">Tipo (*)</label>
                             <select name="tipo" class="form-control form-control-sm" required>
-                                <option value="Vacaciones">Vacaciones</option>
-                                <option value="Permiso">Permiso</option>
-                                <option value="Aumento">Aumento</option>
+                                @foreach($categorias as $categoria)
+                                    <option value="{{ $categoria->nombre }}">{{ $categoria->nombre }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
