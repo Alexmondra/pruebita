@@ -7,7 +7,7 @@
           <div class="card">
             <div class="card-header">
               <div class="d-flex align-items-center">
-                <h5 class="card-title">Categorías</h5>
+                <h5 class="card-title">Lista de tipos de solicitudes</h5>
                 @can('categoria-crear')
                   <button id="btnAdd" class="ml-2 btn btn-primary btn-sm">
                     <i class="fas fa-plus"></i>
@@ -51,8 +51,8 @@
         let op=data.action;
         if(op=='activar'){
           Swal.fire({
-            title: 'Activar Registro',
-            text: "¿Esta seguro de querer activar el registro",
+            title: 'Activar Solicitud',
+            text: "¿Esta seguro de querer activar la solicitud",
             icon: 'success',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -67,8 +67,8 @@
         }
         if(op=='desactivar'){
           Swal.fire({
-            title: 'Desactivar Registro',
-            text: "¿Esta seguro de querer desactivar el registro?",
+            title: 'Desactivar Solicitud',
+            text: "¿Esta seguro de querer desactivar el tipo de solicitud?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

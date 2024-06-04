@@ -24,7 +24,7 @@
           <a id="aVisita" href="{{route('solicitud.index')}}" class="nav-link">
             <i class="nav-icon fas fa-file"></i>
             <p>
-              solicitudes
+              Registros 
             </p>
           </a>
         </li>
@@ -33,7 +33,7 @@
           <a id="aAlmacen" href="#" class="nav-link">
             <i class="nav-icon fa fa-table"></i>
             <p>
-              gerente
+              Tipo Solicitudes
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -42,7 +42,7 @@
             <li class="nav-item">
               <a id="liCategoria" href="{{route('categoria.index')}}" class="nav-link">
                 <i class="far nav-icon"></i>
-                <p>Categorías</p>
+                <p>Solicitud</p>
               </a>
             </li>
             @endcan
@@ -52,7 +52,7 @@
           <a id="aSeguridad" href="#" class="nav-link">
             <i class="nav-icon fas fa-shield-alt"></i>
             <p>
-              Administrador - segurid
+              Administrador - Segurid
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>

@@ -1,6 +1,6 @@
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">Categoría</h4>
+            <h4 class="modal-title">Tipo solicitud</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -15,14 +15,14 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="nombre">Nombre (*)</label>
-                            <input name="nombre" value="{{$categoria->nombre}}" class="form-control form-control-sm" type="text">
+                          
+                            <input name="nombre" value="{{$categoria->nombre}}" class="form-control form-control-sm" type="text" placeholder="nombre de solicitud">
                             <div id="msg_nombre"></div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="imagen">Imagen</label>
+                           
                             <input accept="image/*" name="imagen" value="{{$categoria->imagen}}" class="form-control form-control-sm" type="file" placeholder="">
                             @if($categoria->id)
                             <div>Imagen actual: {{$categoria->imagen}}</div>

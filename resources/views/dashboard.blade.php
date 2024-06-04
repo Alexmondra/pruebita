@@ -7,10 +7,10 @@
                   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                       <div class="carousel-inner">
                           <div class="carousel-item active">
-                              <img src="{{ asset('assets/car1.png') }}" class="d-block w-100" alt="..." style="object-fit: cover; height: 300px;">
+                              <img src="{{asset('assets/car1.png') }}" class="d-block w-100" alt="..." style="object-fit: cover; height: 300px;">
                           </div>
                           <div class="carousel-item">
-                              <img src="{{ asset('assets/car2.png') }}" class="d-block w-100" alt="..." style="object-fit: cover; height: 300px;">
+                              <img src="{{asset('assets/car2.png') }}" class="d-block w-100" alt="..." style="object-fit: cover; height: 300px;">
                           </div>
                           <div class="carousel-item">
                               <img src="{{ asset('assets/car3.png') }}" class="d-block w-100" alt="..." style="object-fit: cover; height: 300px;">
