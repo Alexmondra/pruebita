@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="tipo">Tipo (*)</label>
+                            <label for="tipo">Tipos (*)</label>
                             <select name="tipo" class="form-control form-control-sm" disabled>
                                 @foreach($categorias as $categoria)
                                     <option value="{{ $categoria->nombre }}" {{ $solicitud->tipo === $categoria->nombre ? 'selected' : '' }}>

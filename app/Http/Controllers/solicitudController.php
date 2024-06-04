@@ -24,7 +24,7 @@ class SolicitudController extends Controller
     public function create()
     {
         $this->authorize('solicitud-crear');
-        $categorias = Categoria::where('estado', 1)->get(); 
+        $categorias = Categoria::all(); 
         $solicitud = new Solicitud();
         return view('solicitud.solicitud-action', ['solicitud' => $solicitud, 'categorias' => $categorias]);
     }
